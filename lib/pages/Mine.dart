@@ -54,6 +54,15 @@ class _MinePageState extends State<MinePage> {
               onTap: () => Navigator.pushNamed(context, '/tabbarpage'),
             ),
             ListTile(
+              title: Text("TabController Bottom"),
+              onTap: () => Navigator.pushNamed(context, '/appbarbottom'),
+            ),
+            ListTile(
+              title: Text("TabController Top"),
+              onTap: () => Navigator.pushNamed(context, '/appbartop'),
+            ),
+
+            ListTile(
               title: Text("StatefulWidget 体验"),
               onTap: () => Navigator.pushNamed(context, '/statefulWidgetet'),
             ),
@@ -142,9 +151,22 @@ class _MinePageState extends State<MinePage> {
               onTap: () => Navigator.pushNamed(context, '/simpledialog'),
             ),
             ListTile(
-              title: Text(""),
-              onTap: () => Navigator.pushNamed(context, ''),
+              title: Text("DrawerHeader"),
+              onTap: () => Navigator.pushNamed(context, '/drawerheaderpage'),
             ),
+            ListTile(
+              title: Text("OverLaypage"),
+              onTap: () => Navigator.pushNamed(context, '/overlaypage'),
+            ),
+            ListTile(
+              title: Text("OverlayStateful"),
+              onTap: () => Navigator.pushNamed(context, '/overlaystateful'),
+            ),
+            ListTile(
+              title: Text("界面跳转路由替换界面传值"),
+              onTap: () => Navigator.pushNamed(context, '/routerpushreplace'),
+            ),
+
             ListTile(
               title: Text(""),
               onTap: () => Navigator.pushNamed(context, ''),
@@ -153,10 +175,7 @@ class _MinePageState extends State<MinePage> {
               title: Text(""),
               onTap: () => Navigator.pushNamed(context, ''),
             ),
-            ListTile(
-              title: Text(""),
-              onTap: () => Navigator.pushNamed(context, ''),
-            ),
+
           ],
         ),
         ListView(

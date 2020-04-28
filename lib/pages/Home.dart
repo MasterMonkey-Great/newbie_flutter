@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newbieflutter/NetWork/HttpClient/Http/home_dao.dart';
+import 'package:newbieflutter/NetWork/HttpClient/Model/home_model.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -8,6 +10,28 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+
+  Future<Null> _handleRefresh() async {
+    try {
+      HomeModel model = await HomeDao.fetch();
+      print(model);
+      setState(() {
+        // localNavList = model.localNavList;
+        // subNavList = model.subNavList;
+        // gridNavModel = model.gridNav;
+        // salesBoxModel = model.salesBox;
+        // bannerList = model.bannerList;
+        // _loading = false;
+      });
+    } catch (e) {
+      print(e);
+      setState(() {
+        //_loading = false;
+      });
+    }
+    return null;
+  }
+
   Widget build(BuildContext context) {
     Widget _appBar = AppBar(
       title: Text('首页'),
@@ -15,6 +39,7 @@ class _HomePageState extends State<HomePage> {
       leading: IconButton(
         icon: Icon(Icons.menu),
         onPressed: () {
+          _handleRefresh();
           print('menu');
         },
       ),
@@ -90,6 +115,44 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: _appBar,
       body: _body,
+       drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(
+                    child: DrawerHeader(
+                        child: Text("你好flutter"),
+                        decoration: BoxDecoration(
+                            color: Colors.yellow,
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://www.itying.com/images/flutter/2.png"),
+                              fit: BoxFit.cover,
+                            ))))
+              ],
+            ),
+            ListTile(
+              leading: CircleAvatar(child: Icon(Icons.home)),
+              title: Text("我的空间"),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(child: Icon(Icons.people)),
+              title: Text("用户中心"),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(child: Icon(Icons.settings)),
+              title: Text("设置中心"),
+            ),
+            Divider(),
+          ],
+        ),
+      ),
+      endDrawer: Drawer(
+        child: Text('右侧侧边栏'),
+      ),
     );
   }
 }

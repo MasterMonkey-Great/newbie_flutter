@@ -1,11 +1,12 @@
 
 
-
 import 'package:flutter/material.dart';
 import 'package:newbieflutter/UIKit/Botton/ButtonShow.dart';
 import 'package:newbieflutter/tabs/Tabs.dart';
 
 import 'package:newbieflutter/UIKit/NavTab/TabBarController.dart';
+import 'package:newbieflutter/UIKit/NavTab/AppBarBottom.dart';
+import 'package:newbieflutter/UIKit/NavTab/AppBarTop.dart';
 
 import 'package:newbieflutter/UIKit/Widget/StatefulWidgetPage.dart';
 import 'package:newbieflutter/UIKit/Widget/StatelessWidgetPage.dart';
@@ -37,13 +38,33 @@ import 'package:newbieflutter/UIKit/TextField/TextFieldPage.dart';
 import 'package:newbieflutter/UIKit/TextField/TestFieldLess.dart';
 
 import 'package:newbieflutter/UIKit/SimpleDialog/SimpleDialog.dart';
+import 'package:newbieflutter/UIKit/DrawerHeader/DrawerHeader.dart';
+
+import 'package:newbieflutter/UIKit/OverLay/OverLay.dart';
+import 'package:newbieflutter/UIKit/OverLay/OverlayStateful.dart';
+
+import 'package:newbieflutter/UIKit/RouterPushReplace/RouterMainPage.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/Form.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/Login.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/Product.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/ProductInfo.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/RegisterFirst.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/RegisterSecond.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/RegisterThird.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/Page/Search.dart';
+import 'package:newbieflutter/UIKit/RouterPushReplace/MaterialPageRoute/NewsList.dart';
+
 
 
 //配置路由
 final routes={
       '/':(context)=>Tabs(),
       '/buttonshow':(context)=> ButtonShowPage(),
+
       '/tabbarpage':(context)=> TabBarControllerPage(),
+      '/appbarbottom':(context) => AppBarBottomPage(),
+      '/appbartop':(context) => AppBarTopPage(),
+
       '/statefulWidgetet':(context)=> StatefilWidgetPage(),
       '/statelessWidget':(context) => StatelssWidgetPage(),
       
@@ -74,6 +95,22 @@ final routes={
       '/testfieldLess':(context) => TextFieldLessPage(),
 
       '/simpledialog':(context) => SimpleDialogPage(),
+
+      '/drawerheaderpage':(context) => DrawerHeaderPage(),
+
+      '/overlaypage':(context) => OverLayPage(),
+      '/overlaystateful':(content) => OverLayStatePage(title: 'Overlay',),
+
+      '/routerpushreplace':(context) => RoutMainPage(),
+      '/form':(context)=>FormPage(),
+      '/product':(context)=>ProductPage(),
+      '/productinfo':(context,{arguments})=>ProductInfoPage(arguments:arguments),
+      '/search':(context,{arguments})=>SearchPage(arguments:arguments),
+      '/login':(context)=>LoginPage(),
+      '/registerFirst':(context)=>RegisterFirstPage(),
+      '/registerSecond':(context)=>RegisterSecondPage(),
+      '/registerThird':(context)=>RegisterThirdPage(),
+      '/materialpagerouter':(context) => NewsListPage(title: '新闻列表'),
 
             
 };
