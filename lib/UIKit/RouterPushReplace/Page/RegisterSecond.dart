@@ -17,10 +17,10 @@ class RegisterSecondPage extends StatelessWidget {
           RaisedButton(
             child: Text('下一步'),
             onPressed: (){
-                //Navigator.pushNamed(context, '/registerThird');
+                Navigator.pushNamed(context, '/registerThird');
 
                 //替换路由
-                Navigator.of(context).pushReplacementNamed('/registerThird');
+                //Navigator.of(context).pushReplacementNamed('/registerThird');
             },
           ),
           SizedBox(height: 40),
