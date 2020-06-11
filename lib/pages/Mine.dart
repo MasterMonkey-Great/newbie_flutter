@@ -168,9 +168,50 @@ class _MinePageState extends State<MinePage> {
             ),
 
             ListTile(
+              title: Text("动画"),
+              onTap: () => Navigator.pushNamed(context, '/anmiationapp'),
+            ),
+            ListTile(
+              title: Text("WebSocket"),
+              onTap: () => Navigator.pushNamed(context, '/websocket'),
+            ),
+
+            ListTile(
+              title: Text("WebSocket-GO"),
+              onTap: () => Navigator.pushNamed(context, '/websocketgo'),
+            ),
+
+
+            ListTile(
               title: Text(""),
               onTap: () => Navigator.pushNamed(context, ''),
             ),
+
+
+            ListTile(
+              title: Text(""),
+              onTap: () => Navigator.pushNamed(context, ''),
+            ),
+
+
+            ListTile(
+              title: Text(""),
+              onTap: () => Navigator.pushNamed(context, ''),
+            ),
+
+
+            ListTile(
+              title: Text(""),
+              onTap: () => Navigator.pushNamed(context, ''),
+            ),
+
+
+            ListTile(
+              title: Text(""),
+              onTap: () => Navigator.pushNamed(context, ''),
+            ),
+
+
             ListTile(
               title: Text(""),
               onTap: () => Navigator.pushNamed(context, ''),

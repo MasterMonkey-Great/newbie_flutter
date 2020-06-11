@@ -54,6 +54,13 @@ import 'package:newbieflutter/UIKit/RouterPushReplace/Page/RegisterThird.dart';
 import 'package:newbieflutter/UIKit/RouterPushReplace/Page/Search.dart';
 import 'package:newbieflutter/UIKit/RouterPushReplace/MaterialPageRoute/NewsList.dart';
 
+import 'package:newbieflutter/Animation/AnimationLogo.dart';
+
+
+import 'package:newbieflutter/NetWork/WebSocket/websocket.dart';
+import 'package:web_socket_channel/io.dart';
+import 'package:newbieflutter/NetWork/WebSocket/websocketgo.dart';
+
 
 
 //配置路由
@@ -111,6 +118,11 @@ final routes={
       '/registerSecond':(context)=>RegisterSecondPage(),
       '/registerThird':(context)=>RegisterThirdPage(),
       '/materialpagerouter':(context) => NewsListPage(title: '新闻列表'),
+
+      '/anmiationapp':(context) => LogoAppor(),
+
+      '/websocket':(context) => WebsocketPage(title: 'WebSocket Demo', channel: IOWebSocketChannel.connect('ws://echo.websocket.org')),
+      '/websocketgo':(context) => WebsocketGoPage(title: 'Flutter Web', channel: IOWebSocketChannel.connect('ws://192.168.80.135/echo'))
 
             
 };
